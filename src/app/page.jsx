@@ -28,7 +28,7 @@ export default function Home() {
         alignItems="flex-end"
         right="5%" top="40%">
 
-          <Typography className="bold" textAlign="end" color="#294c71" component="h1" variant="h4">START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP</Typography>
+          <Typography className="bold" textAlign="end" color="#294c71" component="h1" variant="h4">START THE JOURNEY TO <br/> A BETTER NIGHT%apos;S SLEEP</Typography>
 
           <Box display="flex" gap="1rem">
 
