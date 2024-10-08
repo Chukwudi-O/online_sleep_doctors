@@ -28,11 +28,11 @@ export default function Home() {
         alignItems="flex-end"
         right="5%" top="40%">
 
-          <Typography textAlign="end" color="#294c71" component="h1" variant="h4"><b>START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP</b></Typography>
+          <Typography className="bold" textAlign="end" color="#294c71" component="h1" variant="h4">START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP</Typography>
 
           <Box display="flex" gap="1rem">
 
-            <Typography textAlign="end" color="#9278b6" component="h3" variant="body1"><b>WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS</b></Typography>
+            <Typography className="bold" textAlign="end" color="#9278b6" component="h3" variant="body1">WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS</Typography>
             
             <GetStartedButton/>
           </Box>
@@ -92,13 +92,13 @@ export default function Home() {
 
             <Stack maxWidth="60%" gap={1}>
 
-              <Typography color="white" component="h1" variant="h4"><b>SLEEP DISORDER TREATMENT</b></Typography>
+              <Typography className="bold" color="white" component="h1" variant="h4">SLEEP DISORDER TREATMENT</Typography>
 
               <Stack>
                 
                 <Typography fontSize="0.75rem" color="white" component="h2" variant="body2">SERVICES AVAILABLE IN THE CARIBBEAN</Typography>
                 
-                <Typography fontSize="0.8rem" color="black" component="h2" variant="body2"><b>TRINIDAD, JAMAICA, BARBADOS, ST. LUCIA & THE CAYMAN ISLANDS</b></Typography>
+                <Typography className="bold" fontSize="0.8rem" color="black" component="h2" variant="body2">TRINIDAD, JAMAICA, BARBADOS, ST. LUCIA & THE CAYMAN ISLANDS</Typography>
 
               </Stack>
 
