@@ -1,42 +1,28 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.test{
+  color:#294c71;
+  color:#e8b7bf;
+  color:#363636;
+  color:#9278b6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.sleeper{
+  background-image: linear-gradient(white 12%,transparent 75%), url("../assets/black_man_sleeping.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: relative;
+  width: 100%;
+  height: 97vh;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.sleep_disorder{
+  background-image: linear-gradient(1deg,rgba(0, 0, 0, 0.15) 1%,transparent 22%, rgba(255, 255, 255, 0.25) 100%);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.highlight{
+  color: #294c71;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.text{
+  color: #363636;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+body{margin: 0;}
