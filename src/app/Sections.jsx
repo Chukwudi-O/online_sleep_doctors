@@ -1,5 +1,5 @@
 import { GetStartedButton } from "@/components/Buttons";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import woman_sleeper from "../assets/woman_sleeper_desk.png";
 import tt_flag from "../assets/round_TT_flag.png";
@@ -10,23 +10,37 @@ import ky_flag from "../assets/round_KY_flag.png";
 import clouds from "../assets/cloud_shape.png";
 import SymptomSlider from "@/components/SymptomSlider";
 import logo from "../assets/osd_logo.png"
+import { KeyboardDoubleArrowRight } from "@mui/icons-material";
 
-export  function CallToAction(){
+export  function CtaHero(){
     return (
         <Box
         className="sleeper">
 
             <Stack
-            position="absolute"
-            width="50%" gap={2}
-            alignItems="flex-end"
-            right="5%" top="40%">
+            className="sleeper_content">
 
-            <Typography className="bold" textAlign="end" color="#294c71" component="h1" variant="h4">START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP</Typography>
+            <Typography
+            className="bold"
+            textAlign="end"
+            color="#294c71"
+            component="h1"
+            variant="h4"
+            fontSize="4vw">
+                START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP
+            </Typography>
 
             <Box display="flex" gap="1rem">
 
-                <Typography className="bold" textAlign="end" color="#9278b6" component="h3" variant="body1">WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS</Typography>
+                <Typography
+                className="bold"
+                textAlign="end"
+                color="#9278b6"
+                component="h3"
+                variant="body1"
+                fontSize="2vw">
+                    WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS
+                </Typography>
                 
                 <GetStartedButton/>
             </Box>
@@ -54,8 +68,7 @@ export function SleepDisorderTreatment(){
           display="flex"
           width="40%"
           height="400px"
-          gap={5}
-          justifyContent="center">
+          gap={5}>
 
             <Stack
             justifyContent="center"
@@ -88,42 +101,62 @@ export function SleepDisorderTreatment(){
 
             </Stack>
 
-            <Stack maxWidth="60%" gap={1}>
+            <Stack className="sd_content" gap={1}>
 
-              <Typography className="bold" color="white" component="h1" variant="h4">SLEEP DISORDER TREATMENT</Typography>
+                <Typography
+                className="bold"
+                color="white" 
+                component="h1"
+                variant="h4"
+                fontSize="3vw">
+                    SLEEP DISORDER TREATMENT
+                </Typography>
 
-              <Stack>
-                
-                <Typography fontSize="0.75rem" color="white" component="h2" variant="body2">SERVICES AVAILABLE IN THE CARIBBEAN</Typography>
-                
-                <Typography className="bold" fontSize="0.8rem" color="black" component="h2" variant="body2">TRINIDAD, JAMAICA, BARBADOS, ST. LUCIA & THE CAYMAN ISLANDS</Typography>
+                <Stack>
+                    
+                    <Typography
+                    fontSize="0.75rem"
+                    color="white"
+                    component="h2"
+                    variant="body2">
+                        SERVICES AVAILABLE IN THE CARIBBEAN
+                    </Typography>
+                    
+                    <Typography
+                    className="bold"
+                    fontSize="0.8rem"
+                    color="black"
+                    component="h2"
+                    variant="body2">
+                        TRINIDAD, JAMAICA, BARBADOS, ST. LUCIA & THE CAYMAN ISLANDS
+                    </Typography>
 
-              </Stack>
+                </Stack>
 
-              <Typography
-              component="p"
-              variant="body2"
-              flex={0}
-              color="white">
-                Millions of people around the world are
-                suffering from chronic sleep deprivation. In
-                the Caribbean, people are suffering from a
-                range of chronic, non-communicable
-                illnesses that have been found to be
-                associated with sleep-related issues. These
-                include heart disease, diabetes, and more.
-              </Typography>
+                <Typography
+                component="p"
+                variant="body2"
+                fontSize="1.55vw"
+                color="white">
+                    Millions of people around the world are
+                    suffering from chronic sleep deprivation. In
+                    the Caribbean, people are suffering from a
+                    range of chronic, non-communicable
+                    illnesses that have been found to be
+                    associated with sleep-related issues. These
+                    include heart disease, diabetes, and more.
+                </Typography>
             </Stack>
 
           </Box>
 
-          <Box my="auto" display="flex" height="400px">
+          <Box display="flex">
             <Image
             src={woman_sleeper}
             alt="woman sleeping on desk"
             style={{
               width:"100%",
-              height:"100%"
+              height:"35vw"
             }}/>
           </Box>
         </Box>
@@ -140,7 +173,20 @@ export function SleepDisorderTreatment(){
 
 export function CloudsSection(){
     return (
-        <>
+        <Stack className="cloud_section" position="relative" paddingTop="4.5%">
+            <Box overflow="hidden">
+                <Image
+                src={clouds}
+                style={{
+                    width:"100%",
+                    position:"absolute",
+                    top:"-110px",
+                    objectFit:"contain",
+                    zIndex:-1
+                }}
+                alt="woman sleeping on desk"/>
+            </Box>
+            
             <Stack
             bgcolor="#f6f8fc"
             textAlign="center">
@@ -164,7 +210,7 @@ export function CloudsSection(){
             </Stack>
 
             <SymptomSlider/>
-        </>
+        </Stack>
     );
 }
 
@@ -172,7 +218,7 @@ export function OsdHero(){
     return (
         <Box
         width="100%"
-        height="100vh"
+        bgcolor="white"
         className="osdHero">
 
             <Stack
@@ -226,4 +272,86 @@ export function OsdHero(){
 
         </Box>
     );
+}
+
+export function BannerHero(){
+    const steps = ["Schedule your online sleep consultation", "Take an at-home sleep study", "Review your results with a Sleep Specialist"];
+
+    return (
+        <Stack
+        width="100%"
+        bgcolor="#294c71"
+        alignItems="center"
+        gap={2} py="2rem">
+
+            <Stack
+            width="fit-content">
+
+                <Typography color="white">YOU <span className="bold">CAN</span> GET <span className="bold"><br/>QUALITY SLEEP!</span></Typography>
+
+                <Box
+                overflow="hidden"
+                display="flex"
+                gap={3}>
+
+                    <Box
+                    width="185px">
+                        <Typography component="h1" variant="h4" color="white" lineHeight={1.2} mt="15px">ITS AS EASY AS..</Typography>
+                    </Box>
+
+                    {steps.map((step,i) => {
+                        return <Box
+                        key={i}
+                        gap={1}
+                        alignItems="start"
+                        width="181px"
+                        display="flex"
+                        position="relative"
+                        py={2}
+                        zIndex={1}
+                        sx={{
+                            "::after":{
+                                content:'""',
+                                position: "absolute",
+                                top:"0",left:"0",
+                                translate: "-20% 8%",
+                                borderRadius:"50%",
+                                bgcolor:"rgba(135, 207, 235, 0.5)",
+                                width:"100px",
+                                height:"100px",
+                                zIndex:-1
+                            }
+                        }}>
+
+                            <Typography color="white" component="h1" variant="h1" lineHeight={0.8}>{i+1}</Typography>
+
+                            <Typography color="white" component="h4" variant="h5" lineHeight={1.85} fontSize="16px">{step}</Typography>
+
+                        </Box>;
+                    })}
+
+                </Box>
+
+                <Box
+                gap={2}
+                ml="auto"
+                display="flex">
+
+                    <Typography
+                    textAlign="end">
+                        Got this far but still not convinced?<br/>
+                        Try our our <span className="bold">FREE</span> Sleep Questionnaire
+                    </Typography>
+
+                    <KeyboardDoubleArrowRight
+                    
+                    htmlColor="white" sx={{width:"50px",height:"50px"}}/>
+
+                    <Button variant="contained" sx={{px:"1rem"}}>SLEEP ASSESSMENT QUESTIONAIRE</Button>
+
+                </Box>
+            </Stack>
+
+        </Stack>
+    )
 }

@@ -77,7 +77,7 @@ export default function Navbar(){
                     {links.map((link,i) =>  <NavButton link={link} key={i}/>)}
                 </Box>
 
-                <BookButton/>
+                <BookButton isMobile={false}/>
 
             </Box>
 
