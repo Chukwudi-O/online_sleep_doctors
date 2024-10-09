@@ -18,15 +18,15 @@ export default function SymptomSlider(){
 
     return(
         <Box
-        pb="3rem"
+        pb="2rem"
         width="100%"
         display="flex"
-        gap={1}
+        gap="2vw"
         justifyContent="center"
         bgcolor="#f6f8fc">
 
             <IconButton sx={{height:"fit-content",marginY:"auto",color:"#9278b6"}}>
-                <ArrowBack/>
+                <ArrowBack sx={{fontSize:"5vw"}}/>
             </IconButton>
 
             {symptoms.map((symp,i) => {
@@ -34,7 +34,7 @@ export default function SymptomSlider(){
             })}
 
             <IconButton sx={{height:"fit-content",marginY:"auto",color:"#9278b6"}}>
-                <ArrowForward/>
+                <ArrowForward sx={{fontSize:"5vw"}}/>
             </IconButton>
 
         </Box>
@@ -44,18 +44,17 @@ export default function SymptomSlider(){
 function Symptom({img_url,symptom,description}){
     return (
         <Stack
-        width="150px"
+        width="13vw"
+        gap={1}
         textAlign="center">
-            <Box
-            margin="auto"
-            width="100px">
+            <Box>
                 <Image
                 src={img_url}
                 alt={`${symptom} icon `}
-                style={{width:"100px",height:"100px",scale:0.75}}/>
+                style={{width:"100%",height:"100%"}}/>
             </Box>
-            <Typography component="h5" variant="body2" className="highlight">{symptom}</Typography>
-            <Typography component="p" variant="caption" fontSize="0.5rem" className="text">{description}</Typography>
+            <Typography component="h5" variant="body2"  fontSize="2vw" className="highlight">{symptom}</Typography>
+            <Typography component="p" variant="caption" fontSize="1vw" className="text">{description}</Typography>
         </Stack>
     );
 }

@@ -79,5 +79,12 @@ body{margin: 0;}
   .cloud_section{
     padding-top: 3.5%;
   }
+
+  .cs_head h1{
+    font-size: 5vw;
+  }
+  .cs_head h3{
+    font-size: 2vw;
+  }
  
 }

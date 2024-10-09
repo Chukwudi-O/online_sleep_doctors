@@ -188,8 +188,10 @@ export function CloudsSection(){
             </Box>
             
             <Stack
+            className="cs_head"
             bgcolor="#f6f8fc"
-            textAlign="center">
+            textAlign="center"
+            px={2}>
 
                 <Typography
                 className="highlight"
