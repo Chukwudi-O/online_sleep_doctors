@@ -193,7 +193,7 @@ export function FooterNav(){
                 src={logo_white}/>
             </Box>
 
-            <Box width="100%" display="flex" flexWrap="wrap" gap="1rem" py="1rem" justifyContent="center" fontSize="1vw">
+            <Box width="100%" display="flex" flexWrap="wrap" gap="1vw" py="1rem" justifyContent="center" fontSize="0.5rem">
                 {links.map((item,i) => {
                     return (
 
