@@ -1,10 +1,11 @@
 "use client";
-import { Box, Button, Drawer, IconButton, Stack, useMediaQuery } from "@mui/material";
+import { Box, Button, Drawer, IconButton, Stack, Typography, useMediaQuery } from "@mui/material";
 import { BookButton, NavButton } from "./Buttons";
 import logo from "../assets/osd_logo.png"
+import logo_white from "../assets/osd_logo_white.png"
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { MenuRounded } from "@mui/icons-material";
+import { ArrowCircleUp, Facebook, Instagram, MenuRounded, X } from "@mui/icons-material";
 
 
 const links = ["About","Services","Sleep Disorders","Contact"];
@@ -176,6 +177,92 @@ export function MobileNavbar(){
 
             </Drawer>
 
+        </Stack>
+    );
+}
+
+
+export function FooterNav(){
+
+    return (
+        <Stack sx={{bgcolor:"#262626", alignItems:"center", py:"2rem", width:"100%", position:"relative"}}>
+            <Box width="fit-content" m="auto">
+                <Image
+                width={120}
+                src={logo_white}/>
+            </Box>
+
+            <Box width="100%" display="flex" flexWrap="wrap" gap="1rem" py="1rem" justifyContent="center" fontSize="0.5vw">
+                {links.map((item,i) => {
+                    return (
+
+                        <Button
+                        key={i}
+                        sx={{
+                            width:"fit-content",
+                            color:"white",
+                            fontSize:"inherit",
+                            ":hover":{bgcolor:"#9278b643"}
+                        }}>
+                            {item}
+                        </Button>
+
+                    );
+                })}
+                <Button
+                href="https://online-sleep-doctors-patient-referrals.youcanbook.me"
+                sx={{
+                    width:"fit-content",
+                    color:"white",
+                    fontSize:"inherit",
+                    ":hover":{bgcolor:"rgba(196,120,182,0.2)"}
+                }}>
+                    BOOK A CONSULTATION
+                </Button>
+            </Box>
+
+            <Box
+            m="auto"
+            width="fit-content"
+            display="flex"
+            justifyContent="center">
+                <IconButton>
+                    <Instagram htmlColor="white"/>
+                </IconButton>
+
+                <IconButton>
+                    <Facebook htmlColor="white"/>
+                </IconButton>
+
+                <IconButton>
+                    <X htmlColor="white"/>
+                </IconButton>
+            </Box>
+
+            <Typography
+            my={1}
+            textAlign="center"
+            color="white"
+            component="h5"
+            variant="caption">
+                © 2024 Online Sleep Doctors, 2024
+            </Typography>
+
+            <IconButton
+            href="#home"
+            sx={{
+                position:"relative",
+                "::after":{
+                    content:'"Back to Top"',
+                    position:"absolute",
+                    fontSize:"15px",
+                    bottom:"-20px",
+                    color:"white",
+                    width:"200px",
+                }
+            }}>
+                <ArrowCircleUp htmlColor="white" sx={{fontSize:"2rem"}}/>
+            </IconButton>
         </Stack>
     );
 }

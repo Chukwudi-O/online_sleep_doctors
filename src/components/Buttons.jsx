@@ -36,6 +36,7 @@ export function GetStartedButton(){
     return (
         <Button
         variant="contained"
+        href="https://online-sleep-doctors-patient-referrals.youcanbook.me"
         sx={{
             bgcolor:"#9278b6",
             width:"15vw",
