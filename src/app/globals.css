@@ -21,7 +21,7 @@
 .osdHero{
   background-image: linear-gradient(-90deg,white 15%,transparent 55%), url("../assets/doctor_on_laptop.png");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:contain;
 }
 
 .highlight{

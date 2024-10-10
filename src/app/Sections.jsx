@@ -1,6 +1,6 @@
 "use client";
 import { GetStartedButton } from "@/components/Buttons";
-import { Box, Button, Fade, Slide, Stack, Typography } from "@mui/material";
+import { Box, Button, Slide, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import woman_sleeper from "../assets/woman_sleeper_desk.png";
 import tt_flag from "../assets/round_TT_flag.png";
@@ -14,6 +14,8 @@ import logo from "../assets/osd_logo.png"
 import { KeyboardDoubleArrowRight } from "@mui/icons-material";
 import {Open_Sans} from "next/font/google";
 import { useEffect, useState } from "react";
+import section2 from "../assets/home_section2.png";
+import section4 from "../assets/home_section4.png";
 
 const openSans = Open_Sans({
   subsets:["latin"]
@@ -77,113 +79,119 @@ export  function CtaHero(){
 }
 
 export function SleepDisorderTreatment(){
+    let isPhone = useMediaQuery("(min-width:750px)");
+
     return (
+        !isPhone?<Stack
+        className="sleep_disorder"
+        overflow="hidden"
+        position="sticky"
+        top={-80}
+        zIndex={-1}
+        bgcolor="#9278b6">
+
         <Stack
-      className="sleep_disorder"
-      bgcolor="#9278b6">
+        alignItems="center"
+        py={4}>
+        
+            <Box display="flex" width="50vw">
+                <Image
+                src={woman_sleeper}
+                alt="woman sleeping on desk"
+                style={{
+                width:"100%",
+                height:"100%"
+                }}/>
+            </Box>
 
-        <Box
-        maxWidth="100%"
-        display="flex"
-        justifyContent="center"
-        py={5}>
+            <Box
+            display="flex"
+            width="50%"
+            alignItems="center"
+            height="400px"
+            gap={5}>
 
-          <Box
-          display="flex"
-          width="40%"
-          height="400px"
-          gap={5}>
+                <Stack
+                justifyContent="center"
+                gap={2}>
 
-            <Stack
-            justifyContent="center"
-            gap={2}>
+                    <Image
+                    width={50}
+                    src={tt_flag}
+                    alt="round trinidad and tobago flag"/>
 
-              <Image
-              width={50}
-              src={tt_flag}
-              alt="round trinidad and tobago flag"/>
+                    <Image
+                    width={50}
+                    src={jam_flag}
+                    alt="round trinidad and tobago flag"/>
 
-              <Image
-              width={50}
-              src={jam_flag}
-              alt="round trinidad and tobago flag"/>
+                    <Image
+                    width={50}
+                    src={brd_flag}
+                    alt="round trinidad and tobago flag"/>
 
-              <Image
-              width={50}
-              src={brd_flag}
-              alt="round trinidad and tobago flag"/>
+                    <Image
+                    width={50}
+                    src={slca_flag}
+                    alt="round trinidad and tobago flag"/>
 
-              <Image
-              width={50}
-              src={slca_flag}
-              alt="round trinidad and tobago flag"/>
-
-              <Image
-              width={50}
-              src={ky_flag}
-              alt="round trinidad and tobago flag"/>
-
-            </Stack>
-
-            <Stack className="sd_content" gap={1}>
-
-                <Typography
-                className="bold"
-                color="white" 
-                component="h1"
-                variant="h4"
-                fontSize="3vw">
-                    SLEEP DISORDER TREATMENT
-                </Typography>
-
-                <Stack>
-                    
-                    <Typography
-                    fontSize="0.75rem"
-                    color="white"
-                    component="h2"
-                    variant="body2">
-                        SERVICES AVAILABLE IN THE CARIBBEAN
-                    </Typography>
-                    
-                    <Typography
-                    className="bold"
-                    fontSize="0.8rem"
-                    color="black"
-                    component="h2"
-                    variant="body2">
-                        TRINIDAD, JAMAICA, BARBADOS, ST. LUCIA & THE CAYMAN ISLANDS
-                    </Typography>
+                    <Image
+                    width={50}
+                    src={ky_flag}
+                    alt="round trinidad and tobago flag"/>
 
                 </Stack>
 
-                <Typography
-                component="p"
-                variant="body2"
-                fontSize="1.55vw"
-                color="white">
-                    Millions of people around the world are
-                    suffering from chronic sleep deprivation. In
-                    the Caribbean, people are suffering from a
-                    range of chronic, non-communicable
-                    illnesses that have been found to be
-                    associated with sleep-related issues. These
-                    include heart disease, diabetes, and more.
-                </Typography>
-            </Stack>
+                <Stack className="sd_content" gap={1}>
 
-          </Box>
+                    <Typography
+                    className="bold"
+                    color="white" 
+                    component="h1"
+                    variant="h4"
+                    fontSize="3vw">
+                        SLEEP DISORDER TREATMENT
+                    </Typography>
 
-          <Box display="flex">
-            <Image
-            src={woman_sleeper}
-            alt="woman sleeping on desk"
-            style={{
-              width:"100%",
-              height:"35vw"
-            }}/>
-          </Box>
-        </Box>
+                    <Stack>
+                        
+                        <Typography
+                        fontSize="2vw"
+                        color="white"
+                        component="h2"
+                        variant="body2">
+                            SERVICES AVAILABLE IN THE CARIBBEAN
+                        </Typography>
+                        
+                        <Typography
+                        className="bold"
+                        fontSize="2vw"
+                        color="black"
+                        component="h2"
+                        variant="body2">
+                            TRINIDAD, JAMAICA, BARBADOS, ST. LUCIA & THE CAYMAN ISLANDS
+                        </Typography>
+
+                    </Stack>
+
+                    <Typography
+                    component="p"
+                    variant="body2"
+                    fontSize="1.55vw"
+                    color="white">
+                        Millions of people around the world are
+                        suffering from chronic sleep deprivation. In
+                        the Caribbean, people are suffering from a
+                        range of chronic, non-communicable
+                        illnesses that have been found to be
+                        associated with sleep-related issues. These
+                        include heart disease, diabetes, and more.
+                    </Typography>
+                </Stack>
+
+            </Box>
+
+        </Stack>
             
         <Image
         src={clouds}
@@ -191,6 +199,20 @@ export function SleepDisorderTreatment(){
         alt="woman sleeping on desk"/>
         
       </Stack>
+      :
+      <Box
+      component="div"
+      position="sticky"
+      bgcolor="#9278b6"
+      zIndex={-3}
+      top={-80}>
+
+        <Image
+        src={section2}
+        style={{width:"100%",height:"50vw",margin:"auto"}}
+        alt="woman sleeping on desk"/>
+
+      </Box>
     );
 }
 
@@ -241,28 +263,30 @@ export function CloudsSection(){
 }
 
 export function OsdHero(){
+    let isPhone = useMediaQuery("(min-width:750px)");
     return (
-        <Box
+        !isPhone?<Box
         width="100%"
         bgcolor="white"
         className="osdHero">
 
             <Stack
             gap={1}
-            width="35%"
-            alignItems="center"
-            pt="4rem"
-            ml="auto" mr="5rem"
+            alignItems="end"
+            justifyContent="center"
+            p={2}
             >
 
                 <Box
                 position="relative"
-                width="100%">
+                mr="9vw"
+                width="35%">
 
                     <Typography
                     className="highlight"
                     position="absolute"
                     top={0} left={5}
+                    fontSize="3vw"
                     component="h1"
                     variant="h4">
                     
@@ -275,27 +299,38 @@ export function OsdHero(){
                     src={logo}
                     alt="osd logo"/>
                 </Box>
+                <Box width="55%" p={0.5}
+                bgcolor="rgba(255,255,255,0.35)"
+                borderRadius={2}>
+                    <Typography className="text" mb={2} fontSize="1vw">
+                        
+                        At Online Sleep Doctors, our team of board-certified 
+                        sleep physicians understand just how much sleep 
+                        issues can impact your life. With <span className="accent1">over 50 years of combined experience,</span>
+                        we've seen it all--from snoring to sleep-walking and more.
 
-                <Typography className="text" mb={2}>
-                    
-                    At Online Sleep Doctors, our team of board-certified 
-                    sleep physicians understand just how much sleep 
-                    issues can impact your life. With <span className="accent1">over 50 years of combined experience,</span>
-                    we've seen it all--from snoring to sleep-walking and more.
+                    </Typography>
 
-                </Typography>
+                    <Typography className="text" fontSize="1vw">
 
-                <Typography className="text">
-
-                    We're here to help you figure out what's going on 
-                    with your sleep, and create a personalized 
-                    treatment plan that fits your needs. <span className="accent1">
-                    We're with you every step of the way: helping you
-                    sleep better, feel better and overall improve your quality of life.</span>
-                </Typography>
+                        We're here to help you figure out what's going on 
+                        with your sleep, and create a personalized 
+                        treatment plan that fits your needs. <span className="accent1">
+                        We're with you every step of the way: helping you
+                        sleep better, feel better and overall improve your quality of life.</span>
+                    </Typography>
+                </Box>
 
             </Stack>
 
+        </Box>
+        :
+        <Box p="0 2rem 0 0" bgcolor="white">
+            <Image
+            src={section4}
+            style={{width:"100%", height:"50%",backgroundSize:"contain"}}
+            alt="woman sleeping on desk"/>
+            
         </Box>
     );
 }
