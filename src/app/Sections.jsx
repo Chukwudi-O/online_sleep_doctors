@@ -11,6 +11,11 @@ import clouds from "../assets/cloud_shape.png";
 import SymptomSlider from "@/components/SymptomSlider";
 import logo from "../assets/osd_logo.png"
 import { KeyboardDoubleArrowRight } from "@mui/icons-material";
+import {Open_Sans} from "next/font/google";
+
+const openSans = Open_Sans({
+  subsets:["latin"]
+})
 
 export  function CtaHero(){
     return (
@@ -21,24 +26,24 @@ export  function CtaHero(){
             className="sleeper_content">
 
             <Typography
-            className="bold"
+            className={`highlight ${openSans.className}`}
             textAlign="end"
-            color="#294c71"
             component="h1"
             variant="h4"
-            fontSize="4vw">
+            fontSize="4vw"
+            fontWeight={750}>
                 START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP
             </Typography>
 
-            <Box display="flex" gap="1rem">
+            <Box display="flex" flexShrink={1} gap="1rem">
 
                 <Typography
-                className="bold"
+                className={`accent1 ${openSans.className}`}
                 textAlign="end"
-                color="#9278b6"
                 component="h3"
                 variant="body1"
-                fontSize="2vw">
+                lineHeight={1.2}
+                fontWeight={750}>
                     WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS
                 </Typography>
                 
@@ -194,18 +199,18 @@ export function CloudsSection(){
             px={2}>
 
                 <Typography
-                className="highlight"
+                className={`highlight ${openSans.className}`}
                 component="h1"
                 variant="h5">
                 WE IDENTIFY THE PROBLEM
                 </Typography>
 
                 <Typography
-                className="text"
+                className={`text ${openSans.className}`}
                 component="h3"
                 variant="body2">
 
-                Our <span className="highlight">Board-Certified Specialist</span> can finally put a finger on your restless sleep
+                Our <span className={`highlight ${openSans.className}`}>Board-Certified Specialist</span> can finally put a finger on your restless sleep
 
                 </Typography>
 

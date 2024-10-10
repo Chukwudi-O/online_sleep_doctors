@@ -6,6 +6,11 @@ import narcolepsy from "../assets/narcolepsy.png";
 import restless_leg from "../assets/restless_leg.png";
 import bruxism from "../assets/bruxism.png";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import {Open_Sans} from "next/font/google";
+
+const openSans = Open_Sans({
+  subsets:["latin"]
+})
 
 export default function SymptomSlider(){
     const symptoms = [
@@ -44,17 +49,35 @@ export default function SymptomSlider(){
 function Symptom({img_url,symptom,description}){
     return (
         <Stack
-        width="13vw"
+        pt="1rem"
+        width="12%"
         gap={1}
         textAlign="center">
-            <Box>
+            <Box
+            sx={{width:"5vw", mx:"auto"}}>
                 <Image
                 src={img_url}
                 alt={`${symptom} icon `}
                 style={{width:"100%",height:"100%"}}/>
             </Box>
-            <Typography component="h5" variant="body2"  fontSize="2vw" className="highlight">{symptom}</Typography>
-            <Typography component="p" variant="caption" fontSize="1vw" className="text">{description}</Typography>
+            <Typography
+            component="h5"
+            variant="body2"
+            fontSize="1.5vw"
+            fontWeight={700}
+            className={`cs_b2 highlight ${openSans.className}`}>
+                {symptom}
+            </Typography>
+
+            <Typography
+            component="p"
+            variant="caption"
+            fontSize="1vw"
+            fontWeight={400}
+            className={`text ${openSans.className}`}>
+                {description}
+            </Typography>
+
         </Stack>
     );
 }

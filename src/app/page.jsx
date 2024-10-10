@@ -6,7 +6,11 @@ import section4 from "../assets/home_section4.png";
 import section5 from "../assets/home_section5.png";
 import section6 from "../assets/home_section6.png";
 import section2 from "../assets/home_section2.png";
+import { Open_Sans } from "next/font/google";
 
+const openSans = Open_Sans({
+  subsets:["latin"]
+})
 
 export default function Home() {
   return (
@@ -63,15 +67,18 @@ export default function Home() {
           component="h2"
           variant="h6"
           fontSize="2vw"
-          className="bold">
+          fontWeight="750"
+          className={`${openSans.className}`}>
             Schedule your online sleep consultation today!
           </Typography>
           <Button
+          className={openSans.className}
           variant="contained"
           sx={{
             bgcolor:"#9278b6",
             width:"fit-content",
-            fontSize:"2vw"
+            fontSize:"2vw",
+            fontWeight:"700"
           }}>BOOK A SPECIALIST</Button>
         </Stack>
 
