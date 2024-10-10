@@ -1,5 +1,6 @@
+"use client";
 import { GetStartedButton } from "@/components/Buttons";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Fade, Slide, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import woman_sleeper from "../assets/woman_sleeper_desk.png";
 import tt_flag from "../assets/round_TT_flag.png";
@@ -12,43 +13,61 @@ import SymptomSlider from "@/components/SymptomSlider";
 import logo from "../assets/osd_logo.png"
 import { KeyboardDoubleArrowRight } from "@mui/icons-material";
 import {Open_Sans} from "next/font/google";
+import { useEffect, useState } from "react";
 
 const openSans = Open_Sans({
   subsets:["latin"]
 })
 
 export  function CtaHero(){
+    const [checked, setChecked] = useState(false);
+
+    useEffect(() => {
+        setChecked(true);
+    },[]);
+
     return (
         <Box
         className="sleeper">
-
+            
             <Stack
             className="sleeper_content">
-
-            <Typography
-            className={`highlight ${openSans.className}`}
-            textAlign="end"
-            component="h1"
-            variant="h4"
-            fontSize="4vw"
-            fontWeight={750}>
-                START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP
-            </Typography>
-
-            <Box display="flex" flexShrink={1} gap="1rem">
-
-                <Typography
-                className={`accent1 ${openSans.className}`}
-                textAlign="end"
-                component="h3"
-                variant="body1"
-                lineHeight={1.2}
-                fontWeight={750}>
-                    WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS
-                </Typography>
                 
-                <GetStartedButton/>
-            </Box>
+                <Slide direction="left" in={checked}
+                timeout={1500} easing="ease-in-out">
+
+                    <Typography
+                    className={`highlight ${openSans.className}`}
+                    textAlign="end"
+                    component="h1"
+                    variant="h4"
+                    fontSize="4vw"
+                    fontWeight={750}>
+
+                        START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP
+
+                    </Typography>
+
+                </Slide>
+                <Box display="flex" flexShrink={1} gap="1rem">
+                    <Slide direction="left" in={checked}
+                    timeout={1500} easing="ease-in-out">
+                        
+                        <Typography
+                        className={`accent1 ${openSans.className}`}
+                        textAlign="end"
+                        component="h3"
+                        variant="body1"
+                        lineHeight={1.2}
+                        fontWeight={750}>
+                            
+                            WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS
+                        </Typography>
+                        
+                    </Slide>
+
+                    <GetStartedButton/>
+                </Box>
 
             </Stack>
             

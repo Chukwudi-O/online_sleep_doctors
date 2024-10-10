@@ -63,7 +63,7 @@ function Symptom({img_url,symptom,description}){
             <Typography
             component="h5"
             variant="body2"
-            fontSize="1.5vw"
+            fontSize="1.75vw"
             fontWeight={700}
             className={`cs_b2 highlight ${openSans.className}`}>
                 {symptom}
@@ -72,7 +72,7 @@ function Symptom({img_url,symptom,description}){
             <Typography
             component="p"
             variant="caption"
-            fontSize="1vw"
+            fontSize="1.25vw"
             fontWeight={400}
             className={`text ${openSans.className}`}>
                 {description}

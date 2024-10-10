@@ -58,7 +58,10 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
   align-items: flex-end;
   right: 8%;
   top: 40%;
+  overflow: hidden;
 }
+
+
 
 @media (width <= 750px) {
   .sleeper_content{
@@ -84,6 +87,18 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
   }
   .cs_head h3{
     font-size: 2vw;
+  }
+  
+}
+
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
   }
   
 }
