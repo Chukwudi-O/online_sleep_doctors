@@ -173,14 +173,14 @@ export function SleepDisorderTreatment(){
 
 export function CloudsSection(){
     return (
-        <Stack className="cloud_section" position="relative" paddingTop="4.5%">
+        <Stack className="cloud_section" position="relative" bgcolor="#f6f8fc">
             <Box overflow="hidden">
                 <Image
                 src={clouds}
                 style={{
                     width:"100%",
                     position:"absolute",
-                    top:"-110px",
+                    top:"-125px",
                     objectFit:"contain",
                     zIndex:-1
                 }}

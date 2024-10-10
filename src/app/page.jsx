@@ -20,6 +20,7 @@ export default function Home() {
       <Box
       component="div"
       position="sticky"
+      bgcolor="#9278b6"
       zIndex={-3}
       top={-80}>
 

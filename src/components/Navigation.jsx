@@ -63,9 +63,10 @@ export function Navbar(){
 
             <Image
             src={logo}
-            width={125}
             alt="osd logo"
             style={{
+                height:"100%",
+                width:"15vw",
                 marginLeft:"2rem"
             }}/>
 
@@ -192,7 +193,7 @@ export function FooterNav(){
                 src={logo_white}/>
             </Box>
 
-            <Box width="100%" display="flex" flexWrap="wrap" gap="1rem" py="1rem" justifyContent="center" fontSize="0.5vw">
+            <Box width="100%" display="flex" flexWrap="wrap" gap="1rem" py="1rem" justifyContent="center" fontSize="1vw">
                 {links.map((item,i) => {
                     return (
 
