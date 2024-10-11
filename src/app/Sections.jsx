@@ -1,6 +1,6 @@
 "use client";
 import { GetStartedButton } from "@/components/Buttons";
-import { Box, Button, Slide, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Fade, Slide, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import woman_sleeper from "../assets/woman_sleeper_desk.png";
 import tt_flag from "../assets/round_TT_flag.png";
@@ -13,9 +13,12 @@ import SymptomSlider from "@/components/SymptomSlider";
 import logo from "../assets/osd_logo.png"
 import { KeyboardDoubleArrowRight } from "@mui/icons-material";
 import {Open_Sans} from "next/font/google";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import section2 from "../assets/home_section2.png";
 import section4 from "../assets/home_section4.png";
+import { connectObserver, getObserver } from "@/utils/animation_observers";
+
+const countries = [tt_flag,jam_flag,brd_flag,slca_flag,ky_flag];
 
 const openSans = Open_Sans({
   subsets:["latin"]
@@ -43,8 +46,8 @@ export  function CtaHero(){
                     textAlign="end"
                     component="h1"
                     variant="h4"
-                    fontSize="4vw"
-                    fontWeight={750}>
+                    fontSize="1.75rem"
+                    fontWeight={1000}>
 
                         START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP
 
@@ -60,6 +63,7 @@ export  function CtaHero(){
                         textAlign="end"
                         component="h3"
                         variant="body1"
+                        fontSize="1.75vw"
                         lineHeight={1.2}
                         fontWeight={750}>
                             
@@ -80,11 +84,29 @@ export  function CtaHero(){
 
 export function SleepDisorderTreatment(){
     let isPhone = useMediaQuery("(min-width:750px)");
+    const [checked, setCheck] = useState(false);
+    const targ = useRef(null);
+
+    const handleIntersect = ([entry]) => {
+        if (entry.isIntersecting && entry.target.id === "sleep_disorder"){setCheck(true)}
+    };
+
+    useEffect(() => {
+        const observer = connectObserver(targ,handleIntersect,0.5);
+
+        return () => {
+            if (targ.current) {
+              observer.unobserve(targ.current);
+            }
+        };
+    }),[];
 
     return (
         !isPhone?<Stack
         className="sleep_disorder"
         overflow="hidden"
+        ref={targ}
+        id="sleep_disorder"
         position="sticky"
         top={-80}
         zIndex={-1}
@@ -94,7 +116,7 @@ export function SleepDisorderTreatment(){
         alignItems="center"
         py={4}>
         
-            <Box display="flex" width="50vw">
+            <Box display="flex" width="60%">
                 <Image
                 src={woman_sleeper}
                 alt="woman sleeping on desk"
@@ -104,92 +126,103 @@ export function SleepDisorderTreatment(){
                 }}/>
             </Box>
 
-            <Box
+            <Stack
             display="flex"
-            width="50%"
+            width="60%"
             alignItems="center"
-            height="400px"
-            gap={5}>
+            pt="1rem"
+            overflow="hidden"
+            gap={2}>
 
-                <Stack
-                justifyContent="center"
-                gap={2}>
+                
+                <Box
+                display="flex"
+                width="100%"
+                justifyContent="space-between">
 
-                    <Image
-                    width={50}
-                    src={tt_flag}
-                    alt="round trinidad and tobago flag"/>
+                    {countries.map((country,i) => {
+                        return (
+                            <Slide
+                            key={i}
+                            in={checked}
+                            easing="ease-in-out"
+                            direction="down"
+                            timeout={1200+(i*200)}>
+                                    <Box width="8vw">
+                                    <Image
+                                    style={{width:"100%",height:"100%"}}
+                                    src={country}
+                                    alt="round flag"/>
+                                </Box>
+                            </Slide>
+                            
+                        );
+                    })}
 
-                    <Image
-                    width={50}
-                    src={jam_flag}
-                    alt="round trinidad and tobago flag"/>
+                </Box>
 
-                    <Image
-                    width={50}
-                    src={brd_flag}
-                    alt="round trinidad and tobago flag"/>
+                <Fade in={checked} timeout={3000} easing="ease-in">
+                <Box>
+                <Slide direction="up" in={checked} timeout={1500} easing="ease-in-out">
 
-                    <Image
-                    width={50}
-                    src={slca_flag}
-                    alt="round trinidad and tobago flag"/>
+                    <Stack className="sd_content" gap={0.5}>
 
-                    <Image
-                    width={50}
-                    src={ky_flag}
-                    alt="round trinidad and tobago flag"/>
-
-                </Stack>
-
-                <Stack className="sd_content" gap={1}>
-
-                    <Typography
-                    className="bold"
-                    color="white" 
-                    component="h1"
-                    variant="h4"
-                    fontSize="3vw">
-                        SLEEP DISORDER TREATMENT
-                    </Typography>
-
-                    <Stack>
-                        
                         <Typography
-                        fontSize="2vw"
-                        color="white"
-                        component="h2"
-                        variant="body2">
-                            SERVICES AVAILABLE IN THE CARIBBEAN
-                        </Typography>
-                        
-                        <Typography
-                        className="bold"
-                        fontSize="2vw"
-                        color="black"
-                        component="h2"
-                        variant="body2">
-                            TRINIDAD, JAMAICA, BARBADOS, ST. LUCIA & THE CAYMAN ISLANDS
+                        className={openSans.className}
+                        textAlign="center"
+                        color="white" 
+                        component="h1"
+                        fontWeight={700}
+                        variant="h4"
+                        fontSize="1rem">
+                            SLEEP DISORDER TREATMENT
                         </Typography>
 
+                        <Stack gap={1}>
+                            
+                            <Typography
+                            className={openSans.className}
+                            textAlign="center"
+                            fontSize="0.75rem"
+                            color="white"
+                            component="h2"
+                            variant="body2">
+                                SERVICES AVAILABLE IN THE CARIBBEAN
+                            </Typography>
+                            
+                            <Typography
+                            className={openSans.className}
+                            fontSize="0.6rem"
+                            fontWeight={600}
+                            color="black"
+                            component="h2"
+                            variant="body2">
+                                TRINIDAD, JAMAICA, BARBADOS, ST. LUCIA & THE CAYMAN ISLANDS
+                            </Typography>
+
+                        </Stack>
+
+                        <Typography
+                        className={openSans.className}
+                        component="p"
+                        variant="body2"
+                        fontSize="1.55vw"
+                        color="white">
+                            Millions of people around the world are
+                            suffering from chronic sleep deprivation. In
+                            the Caribbean, people are suffering from a
+                            range of chronic, non-communicable
+                            illnesses that have been found to be
+                            associated with sleep-related issues. These
+                            include heart disease, diabetes, and more.
+                        </Typography>
                     </Stack>
 
-                    <Typography
-                    component="p"
-                    variant="body2"
-                    fontSize="1.55vw"
-                    color="white">
-                        Millions of people around the world are
-                        suffering from chronic sleep deprivation. In
-                        the Caribbean, people are suffering from a
-                        range of chronic, non-communicable
-                        illnesses that have been found to be
-                        associated with sleep-related issues. These
-                        include heart disease, diabetes, and more.
-                    </Typography>
-                </Stack>
+                </Slide>
+                </Box>
+                </Fade>
 
-            </Box>
+            </Stack>
 
         </Stack>
             
@@ -218,8 +251,26 @@ export function SleepDisorderTreatment(){
 
 
 export function CloudsSection(){
+    const [checked, setCheck] = useState(false);
+    const targ = useRef(null);
+
+    const handleIntersect = ([entry]) => {
+        if (entry.isIntersecting){setCheck(true)}
+    };
+
+    useEffect(() => {
+        const observer = connectObserver(targ,handleIntersect,0.5);
+
+        return () => {
+            if (targ.current) {
+              observer.unobserve(targ.current);
+            }
+        };
+    }),[];
+
+
     return (
-        <Stack className="cloud_section" position="relative" bgcolor="#f6f8fc">
+        <Stack ref={targ} className="cloud_section" position="relative" bgcolor="#f6f8fc">
             <Box overflow="hidden">
                 <Image
                 src={clouds}
@@ -233,29 +284,32 @@ export function CloudsSection(){
                 alt="woman sleeping on desk"/>
             </Box>
             
-            <Stack
-            className="cs_head"
-            bgcolor="#f6f8fc"
-            textAlign="center"
-            px={2}>
+            <Fade in={checked} timeout={1500} easing="ease-in-out">
+                <Stack
+                className="cs_head"
+                bgcolor="#f6f8fc"
+                textAlign="center"
+                px={2}>
 
-                <Typography
-                className={`highlight ${openSans.className}`}
-                component="h1"
-                variant="h5">
-                WE IDENTIFY THE PROBLEM
-                </Typography>
+                    <Typography
+                    className={`highlight ${openSans.className}`}
+                    component="h1"
+                    variant="h5">
+                    WE IDENTIFY THE PROBLEM
+                    </Typography>
 
-                <Typography
-                className={`text ${openSans.className}`}
-                component="h3"
-                variant="body2">
+                    <Typography
+                    className={`text ${openSans.className}`}
+                    component="h3"
+                    variant="body2">
 
-                Our <span className={`highlight ${openSans.className}`}>Board-Certified Specialist</span> can finally put a finger on your restless sleep
+                    Our <span className={`highlight ${openSans.className}`}>Board-Certified Specialist</span> can finally put a finger on your restless sleep
 
-                </Typography>
+                    </Typography>
 
-            </Stack>
+                </Stack>
+            </Fade>
+            
 
             <SymptomSlider/>
         </Stack>

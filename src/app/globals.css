@@ -11,7 +11,7 @@
   background-repeat: no-repeat;
   background-size:cover;
   position: relative;
-  height: 50vw;
+  height: 80vh;
 }
 
 .sleep_disorder{
@@ -53,27 +53,24 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
 
 .sleeper_content{
   position: absolute;
+  bottom: 25%;
+  right: 10%;
   width: fit-content;
   gap: 0.5rem;
   align-items: flex-end;
-  right: 8%;
-  top: 40%;
+  margin: auto;
   overflow: hidden;
 }
 
 
 
 @media (width <= 750px) {
-  .sleeper_content{
-    position:inherit;
-    right: 0;
-    margin: auto;
-  }
-
+  
 
   .sleeper_content h1{
     font-size: 5vw;
   }
+
 
   .sleeper_content div h3{
     font-size: 3vw;
