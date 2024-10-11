@@ -53,25 +53,29 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
 }
 
 .sleeper_content{
+  flex:-1;
   position: absolute;
   bottom: 25%;
   right: 10%;
-  width: 53%;
-  gap: 0.5rem;
+  gap: 0.2rem;
   align-items: flex-end;
   margin: auto;
   overflow: hidden;
 }
-
+.sleeper_content div{
+  align-items: center;
+}
 
 
 @media (width <= 750px) {
 
   .sleeper_content{
+    border-radius: 10px;
     bottom:50%;
     right: 50%;
-    transform: translate(50%,50%);
+    transform: translate(50%,100%);
   }
+  
   
 
   .sleeper_content h1{
@@ -80,8 +84,9 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
 
 
   .sleeper_content div h3{
-    font-size: 1vw;
+    font-size: 0.6rem
   }
+  
   .cloud_section{
     padding-top: 3.5%;
   }

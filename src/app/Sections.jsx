@@ -49,12 +49,29 @@ export  function CtaHero(){
                     fontSize="1.75rem"
                     fontWeight={1000}>
 
-                        START THE JOURNEY TO <br/> A BETTER NIGHT'S SLEEP
+                        START THE JOURNEY TO
+
+                    </Typography>
+                </Slide>
+                
+                <Slide direction="left" in={checked}
+                timeout={1500} easing="ease-in-out">
+
+                    <Typography
+                    className={`highlight ${openSans.className}`}
+                    textAlign="end"
+                    component="h1"
+                    variant="h4"
+                    fontSize="1.75rem"
+                    fontWeight={1000}>
+
+                        A BETTER NIGHT'S SLEEP
 
                     </Typography>
 
                 </Slide>
-                <Box display="flex" flexShrink={1} gap="1rem">
+
+                <Box display="flex" gap="0.5rem" justifyContent="end">
                     <Slide direction="left" in={checked}
                     timeout={1500} easing="ease-in-out">
                         

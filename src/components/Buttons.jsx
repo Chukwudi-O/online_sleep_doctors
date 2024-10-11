@@ -48,10 +48,9 @@ export function GetStartedButton(){
         href="https://online-sleep-doctors-patient-referrals.youcanbook.me"
         sx={{
             bgcolor:"#9278b6",
-            height:"100%",
-            margin:"auto",
             fontSize:"1.5vw",
-            textAlign:"center"
+            textAlign:"center",
+            p:"1vw",
         }}>
             Get Started
         </Button>
