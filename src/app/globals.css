@@ -53,13 +53,11 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
 }
 
 .sleeper_content{
-  flex:-1;
   position: absolute;
   bottom: 25%;
   right: 10%;
   gap: 0.2rem;
   align-items: flex-end;
-  margin: auto;
   overflow: hidden;
 }
 .sleeper_content div{
