@@ -56,7 +56,7 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
   position: absolute;
   bottom: 25%;
   right: 10%;
-  width: fit-content;
+  width: 53%;
   gap: 0.5rem;
   align-items: flex-end;
   margin: auto;
@@ -68,8 +68,6 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
 @media (width <= 750px) {
 
   .sleeper_content{
-    align-items: center;
-    width: 100%;
     bottom:50%;
     right: 50%;
     transform: translate(50%,50%);
@@ -77,12 +75,12 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
   
 
   .sleeper_content h1{
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
 
   .sleeper_content div h3{
-    font-size: 0.7rem;
+    font-size: 1vw;
   }
   .cloud_section{
     padding-top: 3.5%;

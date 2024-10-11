@@ -16,7 +16,7 @@ import {Open_Sans} from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import section2 from "../assets/home_section2.png";
 import section4 from "../assets/home_section4.png";
-import { connectObserver, getObserver } from "@/utils/animation_observers";
+import { connectObserver } from "@/utils/animation_observers";
 
 const countries = [tt_flag,jam_flag,brd_flag,slca_flag,ky_flag];
 
