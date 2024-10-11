@@ -17,6 +17,7 @@ export default function Home() {
     <Box
     id="home"
     width="100%"
+    overflow="hidden"
     minHeight="100%"
     >
       <CtaHero/>
