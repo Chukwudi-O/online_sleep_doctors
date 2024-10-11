@@ -2,8 +2,7 @@ import { Button } from "@mui/material"
 import { Open_Sans } from "next/font/google";
 
 const openSans = Open_Sans({
-    subsets:["latin"],
-    weight:["400","700"]
+    subsets:["latin"]
   })
 
 
@@ -32,6 +31,7 @@ export function BookButton({isMobile}){
         href="https://online-sleep-doctors-patient-referrals.youcanbook.me"
         variant="contained" sx={{
             bgcolor:"#e8b7bf",
+            margin:"auto",
             width:isMobile?"100%":"fit-content",
             fontSize:!isMobile?"1.15vw":"1em"
         }}>
@@ -48,9 +48,9 @@ export function GetStartedButton(){
         href="https://online-sleep-doctors-patient-referrals.youcanbook.me"
         sx={{
             bgcolor:"#9278b6",
-            fontSize:"1.5vw",
+            fontSize:"1rem",
             textAlign:"center",
-            p:"1vw",
+            p:"4px",
         }}>
             Get Started
         </Button>

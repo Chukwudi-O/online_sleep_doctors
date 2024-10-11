@@ -66,15 +66,13 @@ export function Navbar(){
             transition:"400ms",
             transform: isHidden?"translateY(-100%)":"transform: translateY(0%);"
         }}>
+            <Box width={isPhone?"8rem":"6rem"}>
+                <Image
+                src={logo}
+                alt="Online Sleep Doctors"
+                style={{margin:"auto",width:"100%",height:"100%", marginLeft:"2rem"}}/>
+            </Box>
 
-            <Image
-            src={logo}
-            alt="osd logo"
-            style={{
-                height:"100%",
-                width:"15vw",
-                marginLeft:"2rem"
-            }}/>
 
             <Box
             display={isPhone?"flex":"none"}
@@ -124,6 +122,7 @@ export function MobileNavbar(){
             top:"10%",
             zIndex:"2",
             gap:"2rem",
+            justifyContent:"center"
         }}
         >
             <IconButton
@@ -139,11 +138,13 @@ export function MobileNavbar(){
             open={isOpen}
             onClose={() => toggleSidebar(false)}>
 
-                <Image
-                src={logo}
-                alt="Online Sleep Doctors"
-                width={200}
-                style={{margin:"auto", marginTop:"0.5rem"}}/>
+                <Box width="25%" m="auto">
+                    <Image
+                    src={logo}
+                    alt="Online Sleep Doctors"
+                    style={{margin:"auto",width:"100%",height:"100%", marginTop:"0.5rem"}}/>
+                </Box>
+                
 
                 {links.map((item,i) => {
                 return (

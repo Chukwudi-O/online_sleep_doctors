@@ -1,22 +1,37 @@
 "use client";
-import { GetStartedButton } from "@/components/Buttons";
-import { Box, Button, Fade, Slide, Stack, Typography, useMediaQuery } from "@mui/material";
+
 import Image from "next/image";
+import {Open_Sans} from "next/font/google";
+import { useEffect, useRef, useState } from "react";
+import { GetStartedButton } from "@/components/Buttons";
+
+
+import logo from "../assets/osd_logo.png"
+import clouds from "../assets/cloud_shape.png";
 import woman_sleeper from "../assets/woman_sleeper_desk.png";
+
+import ky_flag from "../assets/round_KY_flag.png";
 import tt_flag from "../assets/round_TT_flag.png";
 import jam_flag from "../assets/round_JAM_flag.png";
 import brd_flag from "../assets/round_BRD_flag.png";
 import slca_flag from "../assets/round_SLCA_flag.png";
-import ky_flag from "../assets/round_KY_flag.png";
-import clouds from "../assets/cloud_shape.png";
-import SymptomSlider from "@/components/SymptomSlider";
-import logo from "../assets/osd_logo.png"
-import { KeyboardDoubleArrowRight } from "@mui/icons-material";
-import {Open_Sans} from "next/font/google";
-import { useEffect, useRef, useState } from "react";
+
 import section2 from "../assets/home_section2.png";
 import section4 from "../assets/home_section4.png";
+import section6 from "../assets/home_section6.png";
+
+import home_sleep_study from "../assets/service_home_sleep_study_tests.png";
+import ongoing_support from "../assets/service_ongoing_support.png";
+import online_consultation from "../assets/service_online_consultations.png";
+import treatment_recommendation from "../assets/service_treatment_recommendations.png";
+import sleep_data_interpretation from "../assets/service_sleep_data_interpretation.png";
+
+
+import SymptomSlider from "@/components/SymptomSlider";
 import { connectObserver } from "@/utils/animation_observers";
+
+import { KeyboardDoubleArrowRight } from "@mui/icons-material";
+import {Box,Button,Card,Fade,Grid2,Slide,Stack,Typography,useMediaQuery} from "@mui/material";
 
 const countries = [tt_flag,jam_flag,brd_flag,slca_flag,ky_flag];
 
@@ -37,60 +52,64 @@ export  function CtaHero(){
             
             <Stack
             className="sleeper_content">
-                
-                <Slide direction="left" in={checked}
-                timeout={1500} easing="ease-in-out">
 
-                    <Typography
-                    className={`highlight ${openSans.className}`}
-                    textAlign="end"
-                    component="h1"
-                    variant="h4"
-                    fontSize="1.75rem"
-                    fontWeight={1000}>
-
-                        START THE JOURNEY TO
-
-                    </Typography>
-                </Slide>
-                
-                <Slide direction="left" in={checked}
-                timeout={1500} easing="ease-in-out">
-
-                    <Typography
-                    className={`highlight ${openSans.className}`}
-                    textAlign="end"
-                    component="h1"
-                    variant="h4"
-                    fontSize="1.75rem"
-                    fontWeight={1000}>
-
-                        A BETTER NIGHT'S SLEEP
-
-                    </Typography>
-
-                </Slide>
-
-                <Box display="flex" gap="0.5rem" justifyContent="end">
+                <Box m="auto" overflow="hidden">
                     <Slide direction="left" in={checked}
                     timeout={1500} easing="ease-in-out">
-                        
+
                         <Typography
-                        className={`accent1 ${openSans.className}`}
+                        className={`highlight ${openSans.className}`}
                         textAlign="end"
-                        component="h3"
-                        variant="body1"
-                        fontSize="1rem"
-                        lineHeight={1.2}
-                        fontWeight={750}>
-                            
-                            WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS
+                        component="h1"
+                        variant="h4"
+                        fontSize="1.75rem"
+                        fontWeight={1000}>
+
+                            START THE JOURNEY TO
+
                         </Typography>
-                        
+                    </Slide>
+                    
+                    <Slide direction="left" in={checked}
+                    timeout={1500} easing="ease-in-out">
+
+                        <Typography
+                        className={`highlight ${openSans.className}`}
+                        textAlign="end"
+                        component="h1"
+                        variant="h4"
+                        fontSize="1.75rem"
+                        fontWeight={1000}>
+
+                            A BETTER NIGHT'S SLEEP
+
+                        </Typography>
+
                     </Slide>
 
-                    <GetStartedButton/>
+                    <Box display="flex" gap="0.5rem" justifyContent="end">
+                        <Slide direction="left" in={checked}
+                        timeout={1750} easing="ease-in-out">
+                            
+                            <Typography
+                            className={`accent1 ${openSans.className}`}
+                            textAlign="end"
+                            component="h3"
+                            variant="body1"
+                            fontSize="1.1rem"
+                            lineHeight={1.2}
+                            fontWeight={750}>
+                                
+                                WITH BOARD CERTIFIED <br/> SLEEP SPECIALISTS
+                            </Typography>
+                            
+                        </Slide>
+
+                        <GetStartedButton/>
+                    </Box>
                 </Box>
+                
+                
 
             </Stack>
             
@@ -486,4 +505,112 @@ export function BannerHero(){
 
         </Stack>
     )
+}
+
+export function Services(){
+    let isPhone = useMediaQuery("(min-width:750px)");
+    const services = [
+        ["Online Consultations",online_consultation],
+        ["Sleep Data Interpretation",sleep_data_interpretation],
+        ["Treatment Recommendations",treatment_recommendation],
+        ["Home Sleep Study Tests",home_sleep_study],
+        ["Ongoing Support",ongoing_support]
+    ];
+
+    return (
+        isPhone?<Stack py="4rem" bgcolor="white">
+        <Image
+        src={section6}
+        style={{width:"100%", height:"50%",backgroundSize:"contain"}}
+        alt="woman sleeping on desk"/>
+
+        <Stack
+        gap={2}
+        mt={2}
+        alignItems="center">
+          <Typography
+          component="h2"
+          variant="h6"
+          fontSize="2vw"
+          fontWeight="750"
+          className={`${openSans.className}`}>
+            Schedule your online sleep consultation today!
+          </Typography>
+          <Button
+          href="https://online-sleep-doctors-patient-referrals.youcanbook.me"
+          className={openSans.className}
+          variant="contained"
+          sx={{
+            bgcolor:"#9278b6",
+            width:"fit-content",
+            fontSize:"2vw",
+            fontWeight:"700"
+          }}>BOOK A SPECIALIST</Button>
+        </Stack>
+
+      </Stack>
+
+        :
+        <Stack
+        width="80%"
+        m="auto"
+        
+        py="2rem">
+
+            <Box
+            gap={2}
+            margin="auto"
+            alignItems="center"
+            display="flex">
+
+                <Typography
+                className={`text ${openSans.className}`}
+                component="h3"
+                variant="h6"
+                lineHeight={0.8}
+                fontSize="0.5rem"
+                textAlign="end"
+                >
+                    Your all-in-one Stop <br/> for Quality Sleep
+                </Typography>
+
+                <Typography
+                className={`accent1 ${openSans.className}`}
+                component="h1"
+                variant="h3"
+                fontWeight={1000}
+                fontSize="1rem">
+                    Services We Offer
+                </Typography>
+
+            </Box>
+
+            <Grid2 container spacing={1}>
+
+                {services.map((service,i) => {
+                    return (
+                        <Grid2 key={i} size={4}
+                        sx={{
+                            background:`url(${service[1]})`,
+                            height:"100px",
+                        }}>
+                            <Card elevation={2} sx={{p:"4px"}}>
+                                <Typography
+                                className={openSans.className}
+                                component="h2"
+                                variant="caption"
+                                fontSize="5pt">
+                                    {service[0]}
+                                </Typography>
+                            </Card>
+                            
+
+                        </Grid2>
+                    );
+                })}
+
+            </Grid2>
+
+        </Stack>
+    );
 }
