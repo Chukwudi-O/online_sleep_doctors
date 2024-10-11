@@ -68,6 +68,8 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
 @media (width <= 750px) {
 
   .sleeper_content{
+    align-items: center;
+    width: 100%;
     bottom:50%;
     right: 50%;
     transform: translate(50%,50%);
