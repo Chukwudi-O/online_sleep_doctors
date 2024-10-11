@@ -6,13 +6,6 @@
   color:#9278b6;
 }
 
-.sleeper{
-  background-image: linear-gradient(white 12%,transparent 75%), url("../assets/black_man_sleeping.png");
-  background-repeat: no-repeat;
-  background-size:cover;
-  position: relative;
-  height: 80vh;
-}
 
 .sleep_disorder{
   background-image: linear-gradient(1deg,rgba(0, 0, 0, 0.15) 1%,transparent 22%, rgba(255, 255, 255, 0.25) 100%);
@@ -51,6 +44,14 @@
 
 body{margin: 0; font-family: "Open Sans", sans-serif;}
 
+.sleeper{
+  background-image: linear-gradient(white 12%,transparent 75%), url("../assets/black_man_sleeping.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  position: relative;
+  height: 75vh;
+}
+
 .sleeper_content{
   position: absolute;
   bottom: 25%;
@@ -67,8 +68,9 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
 @media (width <= 750px) {
 
   .sleeper_content{
-    bottom:40%;
-    right: 15%;
+    bottom:50%;
+    right: 50%;
+    transform: translate(50%,50%);
   }
   
 

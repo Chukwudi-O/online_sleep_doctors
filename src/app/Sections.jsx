@@ -63,7 +63,7 @@ export  function CtaHero(){
                         textAlign="end"
                         component="h3"
                         variant="body1"
-                        fontSize="1.75vw"
+                        fontSize="1rem"
                         lineHeight={1.2}
                         fontWeight={750}>
                             
