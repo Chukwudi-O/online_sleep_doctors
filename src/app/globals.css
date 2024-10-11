@@ -65,15 +65,20 @@ body{margin: 0; font-family: "Open Sans", sans-serif;}
 
 
 @media (width <= 750px) {
+
+  .sleeper_content{
+    bottom:40%;
+    right: 15%;
+  }
   
 
   .sleeper_content h1{
-    font-size: 5vw;
+    font-size: 1.25rem;
   }
 
 
   .sleeper_content div h3{
-    font-size: 3vw;
+    font-size: 0.7rem;
   }
   .cloud_section{
     padding-top: 3.5%;
