@@ -354,6 +354,23 @@ export function CloudsSection(){
 
 export function OsdHero(){
     let isPhone = useMediaQuery("(min-width:750px)");
+    const [checked, setCheck] = useState(false);
+    const targ = useRef(null);
+
+    const handleIntersect = ([entry]) => {
+        if (entry.isIntersecting){setCheck(true)}
+    };
+
+    useEffect(() => {
+        const observer = connectObserver(targ,handleIntersect,0.6);
+
+        return () => {
+            if (targ.current) {
+              observer.unobserve(targ.current);
+            }
+        };
+    }),[];
+
     return (
         !isPhone?<Box
         width="100%"
@@ -361,6 +378,7 @@ export function OsdHero(){
         className="osdHero">
 
             <Stack
+            
             gap={1}
             alignItems="end"
             justifyContent="center"
@@ -391,26 +409,44 @@ export function OsdHero(){
                 </Box>
 
                 <Box width="45%" p={0.5}
+                overflow="hidden"
                 bgcolor="rgba(255,255,255,0.35)"
                 sx={{background:"linear-gradient(to left, white, transparent)"}}
-                borderRadius={2}>
-                    <Typography className="text" mb={2} fontSize="2vw">
-                        
-                        At Online Sleep Doctors, our team of board-certified 
-                        sleep physicians understand just how much sleep 
-                        issues can impact your life. With <span className="accent1">over 50 years of combined experience,</span>
-                        we've seen it all--from snoring to sleep-walking and more.
+                borderRadius={2}
+                ref={targ}>
 
-                    </Typography>
+                    <Slide
+                    direction="left"
+                    in={checked}
+                    timeout={1250}
+                    easing="ease-in-out">
+                        <Typography className="text" mb={2} fontSize="2vw">
+                                                
+                            At Online Sleep Doctors, our team of board-certified 
+                            sleep physicians understand just how much sleep 
+                            issues can impact your life. With <span className="accent1">over 50 years of combined experience,</span>
+                            we've seen it all--from snoring to sleep-walking and more.
 
-                    <Typography className="text" fontSize="2vw">
+                        </Typography>
+                    </Slide>
 
-                        We're here to help you figure out what's going on 
-                        with your sleep, and create a personalized 
-                        treatment plan that fits your needs. <span className="accent1">
-                        We're with you every step of the way: helping you
-                        sleep better, feel better and overall improve your quality of life.</span>
-                    </Typography>
+                    <Slide
+                    direction="left"
+                    in={checked}
+                    timeout={1500}
+                    easing="ease-in-out">
+                         <Typography className="text" fontSize="2vw">
+
+                            We're here to help you figure out what's going on 
+                            with your sleep, and create a personalized 
+                            treatment plan that fits your needs. <span className="accent1">
+                            We're with you every step of the way: helping you
+                            sleep better, feel better and overall improve your quality of life.</span>
+                        </Typography>
+                    </Slide>
+                    
+
+                   
                 </Box>
 
             </Stack>
