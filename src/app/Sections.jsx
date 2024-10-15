@@ -364,7 +364,7 @@ export function OsdHero(){
             gap={1}
             alignItems="end"
             justifyContent="center"
-            p={2}
+            p={1}
             >
 
                 <Box
@@ -373,9 +373,9 @@ export function OsdHero(){
                 width="35%">
 
                     <Typography
-                    className="highlight"
+                    className={`highlight ${openSans.className}`}
                     position="absolute"
-                    top={0} left={5}
+                    top={0} left={3}
                     fontSize="3vw"
                     component="h1"
                     variant="h4">
@@ -389,10 +389,12 @@ export function OsdHero(){
                     src={logo}
                     alt="osd logo"/>
                 </Box>
-                <Box width="55%" p={0.5}
+
+                <Box width="45%" p={0.5}
                 bgcolor="rgba(255,255,255,0.35)"
+                sx={{background:"linear-gradient(to left, white, transparent)"}}
                 borderRadius={2}>
-                    <Typography className="text" mb={2} fontSize="1vw">
+                    <Typography className="text" mb={2} fontSize="2vw">
                         
                         At Online Sleep Doctors, our team of board-certified 
                         sleep physicians understand just how much sleep 
@@ -401,7 +403,7 @@ export function OsdHero(){
 
                     </Typography>
 
-                    <Typography className="text" fontSize="1vw">
+                    <Typography className="text" fontSize="2vw">
 
                         We're here to help you figure out what's going on 
                         with your sleep, and create a personalized 
