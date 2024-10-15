@@ -513,8 +513,7 @@ export function Services(){
         ["Online Consultations",online_consultation],
         ["Sleep Data Interpretation",sleep_data_interpretation],
         ["Treatment Recommendations",treatment_recommendation],
-        ["Home Sleep Study Tests",home_sleep_study],
-        ["Ongoing Support",ongoing_support]
+        ["Home Sleep Study Tests",home_sleep_study]
     ];
 
     return (
@@ -554,7 +553,7 @@ export function Services(){
         <Stack
         width="80%"
         m="auto"
-        
+        gap={2}
         py="2rem">
 
             <Box
@@ -568,7 +567,7 @@ export function Services(){
                 component="h3"
                 variant="h6"
                 lineHeight={0.8}
-                fontSize="0.5rem"
+                fontSize="2vw"
                 textAlign="end"
                 >
                     Your all-in-one Stop <br/> for Quality Sleep
@@ -579,35 +578,105 @@ export function Services(){
                 component="h1"
                 variant="h3"
                 fontWeight={1000}
-                fontSize="1rem">
+                fontSize="5vw">
                     Services We Offer
                 </Typography>
 
             </Box>
 
-            <Grid2 container spacing={1}>
+            <Grid2 container spacing={1} rowSpacing={2}>
 
                 {services.map((service,i) => {
                     return (
                         <Grid2 key={i} size={4}
+                        
                         sx={{
-                            background:`url(${service[1]})`,
-                            height:"100px",
+                            height:"35vw",
                         }}>
-                            <Card elevation={2} sx={{p:"4px"}}>
+                            <Card
+                            elevation={2}
+                            
+                            sx={{
+                                p:"4px",
+                                display:"flex",
+                                alignItems:"end",
+                                height:"100%",
+                                backgroundSize:"cover",
+                                backgroundImage:`url(${service[1].src})`
+                            }}>
+
                                 <Typography
                                 className={openSans.className}
                                 component="h2"
                                 variant="caption"
-                                fontSize="5pt">
+                                color="white"fontWeight={700}
+                                fontSize="2.25vw">
                                     {service[0]}
                                 </Typography>
+
                             </Card>
                             
 
                         </Grid2>
                     );
                 })}
+
+                <Grid2 size={4}
+                sx={{
+                    padding:"5px"
+                }}>
+                    <Stack height="100%"  gap={1} justifyContent="center">
+                        <Typography
+                        className={openSans.className}
+                        component="h2"
+                        variant="caption"
+                        fontWeight={800}
+                        textAlign="center"
+                        fontSize="2vw">
+                            Schedule your online sleep consultation today!
+                        </Typography>
+
+                        <Button
+                        fullWidth
+                        variant="contained"
+                        sx={{
+                            fontSize:"0.5rem",
+                            bgcolor:"#9278b6",
+                            p:"4px"
+                        }}>
+                            Book a Specialist
+                        </Button>
+
+                    </Stack>
+
+                </Grid2>
+
+                <Grid2 size={4}>
+                    <Card
+                    elevation={2}
+                    sx={{
+                        p:"4px",
+                        height:"100%",
+                        display:"flex",
+                        alignItems:"end",
+                        backgroundSize:"cover",
+                        backgroundRepeat:"no-repeat",
+                        backgroundImage:`url(${ongoing_support.src})`
+                    }}>
+
+                        <Typography
+                        className={openSans.className}
+                        fontWeight={700}
+                        color="white"
+                        component="h2"
+                        variant="caption"
+                        fontSize="2.25vw">
+                            Ongoing <br/> Support
+                        </Typography>
+                    </Card>
+                    
+
+                </Grid2>
 
             </Grid2>
 
