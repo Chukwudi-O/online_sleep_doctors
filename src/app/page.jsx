@@ -1,8 +1,14 @@
 
 import { Box} from "@mui/material";
-import {CtaHero, CloudsSection, SleepDisorderTreatment, OsdHero, Services} from "./Sections";
+import {Services} from "./Sections";
 import Image from "next/image";
 import section5 from "../assets/home_section5.png";
+
+import Section1 from "./_sections/Section1";
+import Section2 from "./_sections/Section2";
+import Section3 from "./_sections/Section3";
+import Section4 from "./_sections/Section4";
+import Section5 from "./_sections/Section5";
 
 export default function Home() {
   return (
@@ -12,13 +18,13 @@ export default function Home() {
     overflow="hidden"
     minHeight="100%"
     >
-      <CtaHero/>
+      <Section1/>
 
-      <SleepDisorderTreatment/>
+      <Section2/>
 
-      <CloudsSection/>
+      <Section3/>
 
-      <OsdHero/>
+      <Section4/>
 
       <a href="https://onlinesleepdoctors.com/sleep-assessment-questionnaire/">
         <Box bgcolor="white">
@@ -29,6 +35,7 @@ export default function Home() {
 
         </Box>
       </a>
+
         
       <Services/>
 
