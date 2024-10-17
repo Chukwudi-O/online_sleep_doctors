@@ -27,7 +27,7 @@ export default function Section6(){
     };
 
     useEffect(() => {
-        const observer = connectObserver(targ,handleIntersect,0.6);
+        const observer = connectObserver(targ,handleIntersect,0.5);
 
         return () => {
             if (targ.current) {
@@ -45,48 +45,42 @@ export default function Section6(){
 
     return (
         <Stack
+        ref={targ}
         width="95%"
         m="auto"
         gap={4}
         py="4rem">
 
-            <Fade
-            in={checked}
-            timeout={1500}
-            easing="ease-out">
-                <Box
-                gap={2}
-                margin="auto"
-                alignItems="center"
-                display="flex">
+            <Box
+            gap={2}
+            margin="auto"
+            alignItems="center"
+            display="flex">
 
-                    <Typography
-                    className={`text ${openSans.className}`}
-                    component="h3"
-                    variant="h6"
-                    lineHeight={0.8}
-                    fontSize="2vw"
-                    textAlign="end"
-                    >
-                        Your all-in-one Stop <br/> for Quality Sleep
-                    </Typography>
+                <Typography
+                className={`text ${openSans.className}`}
+                component="h3"
+                variant="h6"
+                lineHeight={0.8}
+                fontSize="2vw"
+                textAlign="end"
+                >
+                    Your all-in-one Stop <br/> for Quality Sleep
+                </Typography>
 
-                    <Typography
-                    className={`accent1 ${openSans.className}`}
-                    component="h1"
-                    variant="h3"
-                    fontWeight={1000}
-                    fontSize="5vw">
-                        Services We Offer
-                    </Typography>
+                <Typography
+                className={`accent1 ${openSans.className}`}
+                component="h1"
+                variant="h3"
+                fontWeight={1000}
+                fontSize="5vw">
+                    Services We Offer
+                </Typography>
 
-                </Box>
-            </Fade>
-            
+            </Box>
             
 
             <Grid2
-            ref={targ}
             container
             spacing={1}
             rowSpacing={2}>
