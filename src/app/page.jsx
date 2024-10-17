@@ -9,6 +9,7 @@ import Section2 from "./_sections/Section2";
 import Section3 from "./_sections/Section3";
 import Section4 from "./_sections/Section4";
 import Section5 from "./_sections/Section5";
+import Section6 from "./_sections/Section6";
 
 export default function Home() {
   return (
@@ -26,19 +27,9 @@ export default function Home() {
 
       <Section4/>
 
-      <a href="https://onlinesleepdoctors.com/sleep-assessment-questionnaire/">
-        <Box bgcolor="white">
-          <Image
-          src={section5}
-          style={{width:"100%", height:"50%",backgroundSize:"contain"}}
-          alt="woman sleeping on desk"/>
-
-        </Box>
-      </a>
-
+      <Section5/>
         
-      <Services/>
-
+      <Section6/>
 
     </Box>
   );

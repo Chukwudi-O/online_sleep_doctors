@@ -56,3 +56,26 @@ export function GetStartedButton(){
         </Button>
     );
 }
+
+export function SleepSurveyButton(){
+    return (
+        <Button
+            href="https://onlinesleepdoctors.com/sleep-assessment-questionnaire/"
+            className={openSans.className}
+            variant="contained"
+            sx={{
+                width:"fit-content",
+                bgcolor:"white",
+                color:"#294c71",
+                fontWeight:"700",
+                my:"auto",py:"0.6vw",
+                fontSize:"1.5vw",
+                transition:"400ms",
+                ":hover":{
+                    translate:"0px -4px"
+                }
+            }}>
+                SLEEP ASSESSMENT QUESTIONNAIRE
+            </Button>
+    );
+}

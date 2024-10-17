@@ -1,7 +1,7 @@
 "use client";
 
 import { connectObserver } from "@/utils/animation_observers";
-import { Slide, Typography, useMediaQuery, Box, Stack } from "@mui/material";
+import { Slide, Typography, useMediaQuery, Box, Stack, Collapse } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
@@ -48,29 +48,36 @@ export default function Section4(){
             justifyContent="center"
             p={1}
             >
+                
+                    <Box
+                    position="relative"
+                    mr="9vw"
+                    width="37%">
+                        <Collapse
+                        in={checked}
+                        timeout={1500}
+                        easing="ease-in-out">
 
-                <Box
-                position="relative"
-                mr="9vw"
-                width="35%">
+                            <Typography
+                            className={`highlight ${openSans.className}`}
+                            position="absolute"
+                            top="1vw" left="1vw"
+                            fontSize="3.25vw"
+                            component="h1"
+                            variant="h4">
+                            
+                                YOUR
+                            
+                            </Typography>
 
-                    <Typography
-                    className={`highlight ${openSans.className}`}
-                    position="absolute"
-                    top={0} left={3}
-                    fontSize="3vw"
-                    component="h1"
-                    variant="h4">
-                    
-                        YOUR
-                    
-                    </Typography>
+                            <Image
+                            style={{width:"100%",height:"100%"}}
+                            src={logo}
+                            alt="osd logo"/>
 
-                    <Image
-                    style={{width:"100%",height:"100%"}}
-                    src={logo}
-                    alt="osd logo"/>
-                </Box>
+                        </Collapse>
+                    </Box>
+                
 
                 <Box width="45%" p={0.5}
                 overflow="hidden"
