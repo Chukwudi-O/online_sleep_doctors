@@ -1,12 +1,8 @@
 import { FooterNav, Navbar} from "../components/Navigation";
 import "./globals.css";
-import {Open_Sans} from "next/font/google";
+import localFont from "next/font/local";
 
-const openSans = Open_Sans({
-  subsets:["latin"],
-  weight:["400","700"]
-})
-
+const openSans = localFont({src: "../fonts/OpenSans.ttf"});
 
 export const metadata = {
   title: "Online Sleep Doctors",

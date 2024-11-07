@@ -16,11 +16,9 @@ import jam_flag from "@/assets/round_JAM_flag.png";
 import brd_flag from "@/assets/round_BRD_flag.png";
 import slca_flag from "@/assets/round_SLCA_flag.png";
 
-import {Open_Sans} from "next/font/google";
+import localFont from "next/font/local";
 
-const openSans = Open_Sans({
-    subsets:["latin"]
-});
+const openSans = localFont({src: "../../fonts/OpenSans.ttf"});
 
 const countries = [tt_flag,jam_flag,brd_flag,slca_flag,ky_flag];
 

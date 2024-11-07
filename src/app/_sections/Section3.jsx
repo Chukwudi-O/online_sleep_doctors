@@ -5,11 +5,9 @@ import { connectObserver } from "@/utils/animation_observers";
 import { Fade, Grow, Stack, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
-import {Open_Sans} from "next/font/google";
+import localFont from "next/font/local";
 
-const openSans = Open_Sans({
-    subsets:["latin"]
-});
+const openSans = localFont({src: "../../fonts/OpenSans.ttf"});
 
 export default function Section3(){
     const [checked, setCheck] = useState(false);

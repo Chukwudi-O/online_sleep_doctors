@@ -11,11 +11,9 @@ import online_consultation from "@/assets/service_online_consultations.png";
 import treatment_recommendation from "@/assets/service_treatment_recommendations.png";
 import sleep_data_interpretation from "@/assets/service_sleep_data_interpretation.png";
 
-import {Open_Sans} from "next/font/google";
+import localFont from "next/font/local";
 
-const openSans = Open_Sans({
-    subsets:["latin"]
-});
+const openSans = localFont({src: "../../fonts/OpenSans.ttf"});
 
 export default function Section6(){
     let isPhone = useMediaQuery("(min-width:750px)");
@@ -91,6 +89,10 @@ export default function Section6(){
                         
                         sx={{
                             height:!isPhone?"35vw":"25vw",
+                            transition:"400ms",
+                            ":hover":{
+                                scale:1.1
+                            }
                         }}>
                             <Grow
                             in={checked}
@@ -131,7 +133,7 @@ export default function Section6(){
                 !isPhone?
                     <Grid2 size={!isPhone?4:2.4}
                     sx={{
-                        padding:"5px"
+                        padding:"5px",
                     }}>
                         <Stack height="100%"  gap={1} justifyContent="center">
                             <Typography
@@ -150,7 +152,8 @@ export default function Section6(){
                             sx={{
                                 fontSize:"0.5rem",
                                 bgcolor:"#9278b6",
-                                p:"4px"
+                                p:"4px",
+                                
                             }}>
                                 Book a Specialist
                             </Button>
@@ -164,7 +167,13 @@ export default function Section6(){
 
                 
 
-                <Grid2 size={!isPhone?4:2.4}>
+                <Grid2 size={!isPhone?4:2.4}
+                sx={{
+                    transition:"400ms",
+                    ":hover":{
+                        scale:1.1
+                    }
+                }}>
 
                     <Grow
                     in={checked}
@@ -221,7 +230,11 @@ export default function Section6(){
                     fontSize:"2vw",
                     bgcolor:"#9278b6",
                     fontWeight:"700",
-                    py:"4px", px:"2vw"
+                    py:"4px", px:"2vw",
+                    transition:"500ms",
+                    ":hover":{
+                        scale:1.05
+                    }
                 }}>
                     Book a Specialist
                 </Button>

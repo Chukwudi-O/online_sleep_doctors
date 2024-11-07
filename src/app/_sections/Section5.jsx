@@ -5,15 +5,14 @@ import step2 from "@/assets/survey_step2.png"
 import step3 from "@/assets/survey_step3.png"
 import Image from "next/image";
 
-import {Open_Sans} from "next/font/google";
 import { KeyboardDoubleArrowRight, KeyboardDoubleArrowDown } from "@mui/icons-material";
 import { SleepSurveyButton } from "@/components/Buttons";
 import { useEffect, useRef, useState } from "react";
 import { connectObserver } from "@/utils/animation_observers";
 
-const openSans = Open_Sans({
-    subsets:["latin"]
-});
+import localFont from "next/font/local";
+
+const openSans = localFont({src: "../../fonts/OpenSans.ttf"});
 
 export default function Section5(){
     let isPhone = useMediaQuery("(min-width:750px)");

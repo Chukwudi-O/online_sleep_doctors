@@ -8,13 +8,9 @@ import Image from "next/image";
 import logo from "@/assets/osd_logo.png"
 import section4 from "@/assets/home_section4.png";
 
+import localFont from "next/font/local";
 
-
-import {Open_Sans} from "next/font/google";
-
-const openSans = Open_Sans({
-    subsets:["latin"]
-});
+const openSans = localFont({src: "../../fonts/OpenSans.ttf"});
 
 export default function Section4(){
     let isPhone = useMediaQuery("(min-width:750px)");

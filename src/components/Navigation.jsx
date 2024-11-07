@@ -6,12 +6,9 @@ import logo_white from "../assets/osd_logo_white.png"
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowCircleUp, Facebook, Instagram, MenuRounded, X } from "@mui/icons-material";
-import {Open_Sans} from "next/font/google";
+import localFont from "next/font/local";
 
-const openSans = Open_Sans({
-  subsets:["latin"],
-  weight:["400","700"]
-})
+const openSans = localFont({src: "../fonts/OpenSans.ttf"});
 
 
 const links = ["About","Services","Sleep Disorders","Contact"];

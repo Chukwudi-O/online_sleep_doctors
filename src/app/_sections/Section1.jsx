@@ -2,13 +2,10 @@
 
 import { GetStartedButton } from "@/components/Buttons";
 import { Box, Slide, Stack, Typography } from "@mui/material";
-import {Open_Sans} from "next/font/google";
 import { useEffect, useState } from "react";
+import localFont from "next/font/local";
 
-
-const openSans = Open_Sans({
-    subsets:["latin"]
-  })
+const openSans = localFont({src: "../../fonts/OpenSans.ttf"});
   
   export default function Section1(){
       const [checked, setChecked] = useState(false);
